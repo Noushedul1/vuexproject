@@ -9,7 +9,8 @@ export default createStore({
       {bookname: 'fron end designer',author: 'akib',price: 400,id:4},
       {bookname: 'command line',author: 'akib',price: 800,id:5},
     ],
-    players: ['shakib','tamim','moshfiq']
+    players: ['shakib','tamim','moshfiq'],
+    friends: ['farhad','nuhash','arfat']
   },
   getters: {
     mybookPrice: (state)=>{
