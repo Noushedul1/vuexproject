@@ -8,7 +8,7 @@
     book name : {{eidPrices.bookname}}
   </div>
   <div>
-    <h1>Total Books : {{$store.getters.totalPlayers}}</h1>
+    <h1>Total Books : {{totalPlayers}}</h1>
     <input type="text" v-model="firstname">
     <button @click="myname(firstname)">click</button>
     <ul>
@@ -30,7 +30,7 @@
 <script>
 import Bookshop from './components/Bookshop.vue';
 import {books,players} from './store/index';
-import {mapState,mapActions} from 'vuex';
+import {mapState,mapActions,mapGetters} from 'vuex';
 export default {
 name: 'Vuexsecond',
 components: {
@@ -54,12 +54,17 @@ methods: {
   // }
 },
 computed: {
-      mybookPrice(){
-        return this.$store.getters.mybookPrice;
-      },
-      eidPrice(){
-        return this.$store.getters.eidPrice;
-      },
+      // mybookPrice(){
+      //   return this.$store.getters.mybookPrice;
+      // },
+      // eidPrice(){
+      //   return this.$store.getters.eidPrice;
+      // },
+      ...mapGetters({
+        totalPlayers: 'totalPlayers',
+        mybookPrice: 'mybookPrice',
+        eidPrice: 'eidPrice'
+      }),
       ...mapState({
         myplayer: "players",
         friend: "friends"
