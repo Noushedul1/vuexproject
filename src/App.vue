@@ -8,6 +8,7 @@
     book name : {{eidPrices.bookname}}
   </div>
   <div>
+    <h1>Total Books : {{$store.getters.totalPlayers}}</h1>
     <input type="text" v-model="firstname">
     <button @click="myname">click</button>
     <ul>

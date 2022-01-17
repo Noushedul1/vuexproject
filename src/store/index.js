@@ -28,6 +28,9 @@ export default createStore({
         }
       });
       return eidPrice;
+    },
+    totalPlayers(state){
+      return state.players.length;
     }
   },
   mutations: {
